@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling Reality System - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex flex-col items-center justify-center h-screen pt-16">
+        <h2 class="text-5xl font-bold mb-6 animate-fade-in">Become the Main Character. Rise or Quit.</h2>
+        <p class="text-xl mb-10 animate-slide-in">This is not an app. This is your path to domination.</p>
+        <div class="flex space-x-6">
+            <button class="btn bg-blue-500 text-white hover:bg-blue-600 animate-pulse" onclick="showForm('register')">Start Your Journey</button>
+            <button class="btn bg-purple-500 text-white hover:bg-purple-600 animate-pulse" onclick="showForm('login')">Enter the Arena</button>
+        </div>
+
+        <!-- Login/Register Forms -->
+        <div id="register-form" class="hidden mt-8 bg-gray-800 p-6 rounded-lg w-96 animate-slide-in">
+            <h3 class="text-2xl font-bold mb-4">Register</h3>
+            <form id="register" onsubmit="registerUser(event)">
+                <input type="text" placeholder="Username" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
+                <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
+                <input type="password" placeholder="Password" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
+                <button type="submit" class="btn bg-green-500 w-full hover:bg-green-600">Create Account</button>
+            </form>
+        </div>
+        <div id="login-form" class="hidden mt-8 bg-gray-800 p-6 rounded-lg w-96 animate-slide-in">
+            <h3 class="text-2xl font-bold mb-4">Login</h3>
+            <form id="login" onsubmit="loginUser(event)">
+                <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
+                <input type="password" placeholder="Password" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
+                <button type="submit" class="btn bg-blue-500 w-full hover:bg-blue-600">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function showForm(formType) {
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById(`${formType}-form`).classList.remove('hidden');
+        }
+
+        function registerUser(event) {
+            event.preventDefault();
+            // Future: Send to server via fetch('/api/register')
+            alert('Registration successful! (Static demo)');
+            window.location.href = 'dashboard.html';
+        }
+
+        function loginUser(event) {
+            event.preventDefault();
+            // Future: Send to server via fetch('/api/login')
+            alert('Login successful! (Static demo)');
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
