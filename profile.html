@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Solo Leveling Reality System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto pt-20 pb-10">
+        <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in">Hunter Profile</h2>
+
+        <!-- Avatar and Stats -->
+        <div class="flex flex-col items-center mb-10">
+            <div class="avatar-container">
+                <img src="https://via.placeholder.com/200" alt="Avatar" class="w-48 h-48 rounded-full border-4 border-purple-500 animate-pulse">
+                <button class="btn bg-blue-500 mt-4 hover:bg-blue-600" onclick="customizeAvatar()">Customize</button>
+            </div>
+            <h3 class="text-2xl mt-4">Hunter: ShadowLord</h3>
+            <p>Level: 5 | XP: 350/500 | Coins: 250</p>
+            <div class="hexagon-stats mt-4">
+                <div class="hexagon">STR: 10</div>
+                <div class="hexagon">INT: 8</div>
+                <div class="hexagon">AGI: 12</div>
+                <div class="hexagon">VIT: 9</div>
+            </div>
+        </div>
+
+        <!-- Quest History -->
+        <div>
+            <h3 class="text-2xl font-bold text-center mb-4">Quest History</h3>
+            <ul class="space-y-4">
+                <li class="quest-card animate-slide-in">Completed: Drink 2L Water - 50 XP</li>
+                <li class="quest-card animate-slide-in">Completed: Read 20 Pages - 80 XP</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function customizeAvatar() {
+            alert('Avatar customization coming soon! (Static demo)');
+            // Future: Open modal with customization options
+        }
+    </script>
+</body>
+</html>
