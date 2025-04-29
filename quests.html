@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quests - Solo Leveling Reality System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto pt-20 pb-10">
+        <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in">Quest Board</h2>
+
+        <!-- Tabs -->
+        <div class="tabs flex justify-center mb-6">
+            <button class="tab-button active px-4 py-2 bg-blue-500 rounded-l" data-tab="daily">Daily</button>
+            <button class="tab-button px-4 py-2 bg-gray-700" data-tab="mainline">Mainline</button>
+            <button class="tab-button px-4 py-2 bg-gray-700" data-tab="side">Side</button>
+            <button class="tab-button px-4 py-2 bg-gray-700" data-tab="dungeon">Dungeon</button>
+            <button class="tab-button px-4 py-2 bg-gray-700 rounded-r" data-tab="boss">Boss</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div id="daily" class="tab-content">
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Drink 2L Water</h4>
+                <p>Requirements: Photo of water bottle</p>
+                <p>Reward: 50 XP, 10 Coins</p>
+                <p>Difficulty: Easy</p>
+                <button class="btn bg-green-500 mt-2 hover:bg-green-600">Accept</button>
+            </div>
+        </div>
+        <div id="mainline" class="tab-content hidden">
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Write 1000 Words</h4>
+                <p>Requirements: Text file upload</p>
+                <p>Reward: 200 XP, 50 Coins</p>
+                <p>Difficulty: Medium</p>
+                <button class="btn bg-green-500 mt-2 hover:bg-green-600">Accept</button>
+            </div>
+        </div>
+        <div id="side" class="tab-content hidden">
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Read 20 Pages</h4>
+                <p>Requirements: Book photo</p>
+                <p>Reward: 80 XP, 20 Coins</p>
+                <p>Difficulty: Easy</p>
+                <button class="btn bg-green-500 mt-2 hover:bg-green-600">Accept</button>
+            </div>
+        </div>
+        <div id="dungeon" class="tab-content hidden">
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Workout 1 Hour</h4>
+                <p>Requirements: Video or photo</p>
+                <p>Reward: 300 XP, 100 Coins</p>
+                <p>Difficulty: Hard</p>
+                <button class="btn bg-green-500 mt-2 hover:bg-green-600">Accept</button>
+            </div>
+        </div>
+        <div id="boss" class="tab-content hidden">
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Complete Project</h4>
+                <p>Requirements: Full documentation</p>
+                <p>Reward: 1000 XP, 500 Coins</p>
+                <p>Difficulty: Epic</p>
+                <button class="btn bg-green-500 mt-2 hover:bg-green-600">Accept</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
