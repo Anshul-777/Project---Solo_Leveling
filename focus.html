@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Mode - Solo Leveling Reality System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex flex-col items-center justify-center h-screen pt-16">
+        <h2 class="text-4xl font-bold mb-6 animate-fade-in">Focus Mode</h2>
+        <div class="timer-circle" id="timer">25:00</div>
+        <button class="btn bg-red-500 mt-6 hover:bg-red-600" onclick="startFocus()">Start Timer</button>
+
+        <div class="mt-10 text-center">
+            <h3 class="text-2xl font-bold">Current Quest: Write 500 Words</h3>
+            <p class="mt-2">Upload your text file or type below.</p>
+            <textarea class="w-96 h-32 bg-gray-800 p-2 rounded mt-4" placeholder="Type here..."></textarea>
+            <button class="btn bg-green-500 mt-4 hover:bg-green-600" onclick="window.location.href='verify.html'">Submit</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function startFocus() {
+            const display = document.getElementById('timer');
+            startTimer(25 * 60, display); // 25 minutes
+        }
+    </script>
+</body>
+</html>
