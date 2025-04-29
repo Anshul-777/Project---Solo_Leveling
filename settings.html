@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Solo Leveling Reality System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto pt-20 pb-10">
+        <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in">Settings</h2>
+
+        <div class="bg-gray-800 p-6 rounded-lg w-96 mx-auto animate-slide-in">
+            <div class="mb-6">
+                <label class="block mb-2">Enable Sound Effects</label>
+                <input type="checkbox" checked class="w-5 h-5">
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2">Enable Notifications</label>
+                <input type="checkbox" class="w-5 h-5">
+            </div>
+            <button class="btn bg-red-500 w-full mb-4 hover:bg-red-600" onclick="emergencyLeave()">Activate Emergency Leave</button>
+            <button class="btn bg-gray-500 w-full hover:bg-gray-600" onclick="changePassword()">Change Password</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function emergencyLeave() {
+            if (confirm('Are you sure? This will pause your progress.')) {
+                // Future: Send to server via fetch('/api/emergency')
+                alert('Emergency leave activated! (Static demo)');
+            }
+        }
+
+        function changePassword() {
+            alert('Password change coming soon! (Static demo)');
+            // Future: Open password change form
+        }
+    </script>
+</body>
+</html>
