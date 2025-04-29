@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards - Solo Leveling Reality System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto pt-20 pb-10">
+        <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in">Rewards Shop</h2>
+        <p class="text-center mb-6">Coins: 250</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="quest-card animate-slide-in text-center">
+                <img src="https://via.placeholder.com/150" alt="Gear" class="w-32 h-32 mx-auto">
+                <p class="mt-2">Heavy Armor</p>
+                <p>Cost: 100 Coins</p>
+                <button class="btn bg-yellow-500 mt-2 hover:bg-yellow-600" onclick="buyItem('Heavy Armor')">Buy</button>
+            </div>
+            <div class="quest-card animate-slide-in text-center">
+                <img src="https://via.placeholder.com/150" alt="Aura" class="w-32 h-32 mx-auto">
+                <p class="mt-2">Shadow Aura</p>
+                <p>Cost: 150 Coins</p>
+                <button class="btn bg-yellow-500 mt-2 hover:bg-yellow-600" onclick="buyItem('Shadow Aura')">Buy</button>
+            </div>
+            <div class="quest-card animate-slide-in text-center">
+                <img src="https://via.placeholder.com/150" alt="XP Boost" class="w-32 h-32 mx-auto">
+                <p class="mt-2">XP Boost (24h)</p>
+                <p>Cost: 200 Coins</p>
+                <button class="btn bg-yellow-500 mt-2 hover:bg-yellow-600" onclick="buyItem('XP Boost')">Buy</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function buyItem(itemName) {
+            // Future: Send to server via fetch('/api/rewards')
+            alert(`Purchased ${itemName}! (Static demo)`);
+        }
+    </script>
+</body>
+</html>
