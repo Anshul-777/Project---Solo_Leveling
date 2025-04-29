@@ -1,3 +1,5 @@
+/* script.css */
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -7,222 +9,708 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
+    background: radial-gradient(circle at center, #0a0a0a, #1e2a44);
     color: #ffffff;
     overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* Navigation Bar */
-.navbar {
-    background-color: #2a2a2a;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.navbar .nav-links a {
-    color: #60a5fa;
-    margin-left: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.navbar .nav-links a:hover {
-    color: #93c5fd;
-}
-
-/* Animations */
-@keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slide-in {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes pulse {
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Aura Background Animation */
+@keyframes aura-background {
+    0% { background: radial-gradient(circle at center, #0a0a0a, #1e2a44); }
+    25% { background: radial-gradient(circle at center, #0a0a0a, #2a3d66); }
+    50% { background: radial-gradient(circle at center, #0a0a0a, #1e3a5f); }
+    75% { background: radial-gradient(circle at center, #0a0a0a, #2a3d66); }
+    100% { background: radial-gradient(circle at center, #0a0a0a, #1e2a44); }
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    overflow-x: hidden;
+    animation: aura-background 20s infinite alternate;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+    transition: background 0.3s ease;
+}
+
+.header.sticky {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.header .title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fade-in 1.5s ease-in, pulse 2s infinite;
+}
+
+.header .toggle {
+    font-size: 1.5rem;
+    color: #93c5fd;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header .toggle:hover {
+    transform: rotate(90deg);
+    color: #60a5fa;
+}
+
+.header .profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #60a5fa;
+    cursor: pointer;
+    border: 2px solid #93c5fd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header .profile-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: #2a2a2a;
-    padding: 1rem;
     position: fixed;
+    top: 5rem;
+    left: 0;
     width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 999;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.navbar .nav-links a {
-    color: #60a5fa;
-    margin-left: 1.5rem;
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar a {
+    color: #93c5fd;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-.navbar .nav-links a:hover {
-    color: #93c5fd;
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #60a5fa;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
-/* Animations */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    color: #60a5fa;
+}
+
+/* Core Animations */
 @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
 @keyframes slide-in {
-    from { transform: translateY(50px); opacity: 0; }
+    from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.03); }
     100% { transform: scale(1); }
 }
 
-.animate-fade-in {
-    animation: fade-in 1s ease-in;
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
 }
 
-.animate-slide-in {
-    animation: slide-in 0.8s ease-out;
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-.animate-pulse {
-    animation: pulse 1.5s infinite;
+@keyframes morph {
+    0% { border-radius: 50%; }
+    25% { border-radius: 20%; }
+    50% { border-radius: 40%; }
+    75% { border-radius: 30%; }
+    100% { border-radius: 50%; }
+}
+
+@keyframes draw-line {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes liquid {
+    0% { transform: translate(0, 0) skew(0deg); }
+    25% { transform: translate(5px, 5px) skew(5deg); }
+    50% { transform: translate(-5px, -5px) skew(-5deg); }
+    75% { transform: translate(5px, -5px) skew(5deg); }
+    100% { transform: translate(0, 0) skew(0deg); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes isometric {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    50% { transform: rotateX(15deg) rotateY(15deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg); }
+}
+
+@keyframes doodle {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes flipbook {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(180deg); }
+}
+
+@keyframes zoom-in {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-out {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in { animation: fade-in 1.5s ease-in; }
+.animate-slide-in { animation: slide-in 1s ease-out; }
+.animate-pulse { animation: pulse 2s infinite; }
+.animate-float { animation: float 4s infinite; }
+.animate-rotate { animation: rotate 15s linear infinite; }
+.animate-morph { animation: morph 6s infinite; }
+.animate-liquid { animation: liquid 3s infinite; }
+.animate-gradient-shift { 
+    background: linear-gradient(270deg, #60a5fa, #93c5fd); 
+    background-size: 400% 400%; 
+    animation: gradient-shift 8s ease infinite; 
+}
+.animate-isometric { animation: isometric 5s infinite; }
+.animate-doodle { animation: doodle 2.5s infinite; }
+.animate-flipbook { animation: flipbook 1.5s forwards; }
+
+/* Opening Animation */
+.opening-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fade-out 4s forwards 2s;
+}
+
+.opening-animation .logo {
+    width: 60%;
+    height: auto;
+    background: url('solo-leveling-logo.png') no-repeat center;
+    background-size: contain;
+    animation: zoom-in 2s ease-out, float 3s infinite 2s;
+}
+
+/* Aura Effects */
+.aura {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.5), transparent);
+    filter: blur(60px);
+    animation: aura-pulse 6s infinite alternate;
+}
+
+@keyframes aura-pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.aura-1 { top: 10%; left: 15%; animation-delay: 0s; }
+.aura-2 { top: 60%; right: 20%; animation-delay: 2s; }
+.aura-3 { bottom: 15%; left: 50%; animation-delay: 4s; }
+
+/* Floating Elements */
+.floating {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 5s infinite;
+}
+
+.floating:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    background: rgba(96, 165, 250, 0.6);
+    filter: blur(10px);
+    animation-delay: 0s;
+}
+
+.floating:nth-child(2) {
+    top: 40%;
+    right: 15%;
+    width: 40px;
+    height: 40px;
+    background: rgba(147, 197, 253, 0.6);
+    filter: blur(8px);
+    animation-delay: 1.5s;
+}
+
+.floating:nth-child(3) {
+    bottom: 25%;
+    left: 25%;
+    width: 50px;
+    height: 50px;
+    background: rgba(96, 165, 250, 0.6);
+    filter: blur(12px);
+    animation-delay: 3s;
 }
 
 /* Buttons */
 .btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(45deg, #60a5fa, #93c5fd);
+    border: none;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.4s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.7);
 }
 
-/* Quest Card */
-.quest-card {
-    background-color: #2d2d2d;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    transition: box-shadow 0.3s;
+.btn:active {
+    transform: scale(0.95);
 }
 
-.quest-card:hover {
-    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
-}
-
-/* Hexagon Stats (Simplified) */
-.hexagon-stats {
+/* Hero Section */
+.hero-section {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 3rem;
+}
+
+.hero-section h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #60a5fa;
+    animation: slide-in 1.5s ease-out, float 4s infinite;
+}
+
+.hero-section p {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 1.5rem 0;
+    color: #93c5fd;
+    animation: fade-in 2s ease-in 0.5s forwards;
+    opacity: 0;
+}
+
+.hero-section .btn {
+    margin-top: 2rem;
+    animation: pulse 2s infinite;
+}
+
+/* Hero Images */
+.hero-image {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    opacity: 0.8;
+    animation: float 6s infinite;
+}
+
+.hero-image-1 {
+    top: 15%;
+    left: 10%;
+    transform: rotate(-10deg);
+    animation-delay: 0s;
+}
+
+.hero-image-2 {
+    bottom: 20%;
+    right: 15%;
+    transform: rotate(15deg);
+    animation-delay: 2s;
+}
+
+/* Morphing Element */
+.morphing {
+    width: 120px;
+    height: 120px;
+    background: #60a5fa;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    animation: morph 5s infinite;
+}
+
+/* Animated Logo */
+.animated-logo {
+    width: 150px;
+    height: 150px;
+    background: url('solo-leveling-icon.png') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    animation: rotate 20s linear infinite;
+}
+
+/* Character Animation */
+.character {
+    width: 200px;
+    height: 200px;
+    background: url('solo-leveling-character.png') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    bottom: 15%;
+    right: 25%;
+    animation: float 5s infinite;
+}
+
+/* Scrolling Effects */
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+
+.scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Content Section */
+.content {
+    padding: 8rem 3rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.content h2 {
+    font-size: 3rem;
+    color: #60a5fa;
+    margin-bottom: 2rem;
+    animation: slide-in 1s ease-out;
+}
+
+.content p {
+    font-size: 1.3rem;
+    color: #93c5fd;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    animation: fade-in 1.5s ease-in;
+}
+
+/* Gacha Game Cards */
+.gacha-card {
+    background: linear-gradient(135deg, #2d2d2d, #1e2a44);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gacha-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.gacha-card:hover::after {
+    left: 100%;
+}
+
+.gacha-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.7);
+}
+
+.gacha-card h3 {
+    font-size: 2rem;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    animation: fade-in 1s ease-in;
+}
+
+.gacha-card p {
+    font-size: 1.2rem;
+    color: #93c5fd;
+}
+
+/* Stats Display */
+.stats-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat-item {
+    background: #2d2d2d;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: slide-in 1s ease-out;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+}
+
+.stat-item h4 {
+    font-size: 1.5rem;
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item span {
+    font-size: 2rem;
+    color: #93c5fd;
+}
+
+/* Level Display */
+.level-display {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.level-display h2 {
+    font-size: 3.5rem;
+    color: #60a5fa;
+    animation: pulse 2s infinite;
+}
+
+.level-display p {
+    font-size: 1.5rem;
+    color: #93c5fd;
+}
+
+/* Target Section */
+.target-section {
+    background: #1e2a44;
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 3rem 0;
+    animation: fade-in 2s ease-in;
+}
+
+.target-section h2 {
+    font-size: 2.5rem;
+    color: #60a5fa;
+}
+
+.target-section p {
+    font-size: 1.3rem;
+    color: #93c5fd;
     margin-top: 1rem;
 }
 
+/* Profile Stats - Hexagon Graph */
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
 .hexagon {
-    width: 60px;
-    height: 60px;
-    background-color: #3b82f6;
+    width: 80px;
+    height: 80px;
+    background: #60a5fa;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
-    transition: transform 0.3s;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    transition: transform 0.5s ease, background 0.3s ease;
+    position: relative;
+}
+
+.hexagon::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: inherit;
+    clip-path: inherit;
+    filter: blur(15px);
+    opacity: 0.6;
+    animation: pulse 2s infinite;
 }
 
 .hexagon:hover {
     transform: rotate(360deg);
+    background: #93c5fd;
 }
 
-/* Timer Circle */
-.timer-circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #ef4444;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    animation: pulse 2s infinite;
-}￼Enter    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.animate-fade-in {
+.hexagon span {
     animation: fade-in 1s ease-in;
 }
 
-.animate-slide-in {
-    animation: slide-in 0.8s ease-out;
+/* Footer */
+.footer {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 1px solid rgba(96, 165, 250, 0.2);
+    position: relative;
+    z-index: 10;
 }
 
-.animate-pulse {
-    animation: pulse 1.5s infinite;
+.footer p {
+    font-size: 1.1rem;
+    color: #93c5fd;
+    animation: fade-in 1s ease-in;
 }
 
-/* Buttons */
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
+/* Advanced Effects */
+.glassmorphic {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 2rem;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-over {
-    transform: scale(1.05);
+.neumorphic {
+    background: #2d2d2d;
+    border-radius: 1.5rem;
+    box-shadow: 8px 8px 15px #1a1a1a, -8px -8px 15px #3a3a3a;
+    padding: 2rem;
+    transition: box-shadow 0.3s ease;
 }
 
-/* Quest Card */
-.quest-card {
-    background-color: #2d2d2d;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    transition: box-shadow 0.3s;
+.neumorphic:hover {
+    box-shadow: 4px 4px 10px #1a1a1a, -4px -4px 10px #3a3a3a;
 }
 
-.quest-card:hover {
-    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-section h1 { font-size: 4rem; }
+    .hero-section p { font-size: 1.5rem; }
+    .stats-display { grid-template-columns: repeat(2, 1fr); }
+    .navbar { gap: 2rem; }
 }
 
-/* Hexagon Stats (Simplified) */
-.hexagon-stats {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+@media (max-width: 768px) {
+    .header { padding: 1rem 1.5rem; }
+    .header .title { font-size: 1.5rem; }
+    .navbar { padding: 0.5rem 1.5rem; gap: 1.5rem; top: 4rem; }
+    .navbar a { font-size: 1rem; }
+    .hero-section h1 { font-size: 3rem; }
+    .hero-section p { font-size: 1.3rem; }
+    .content { padding: 6rem 1.5rem 1.5rem; }
+    .stats-display { grid-template-columns: 1fr; }
+    .hero-image { width: 300px; }
 }
 
-.hexagon {
+@media (max-width: 480px) {
+    .header .title { font-size: 1.2rem; }
+    .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
+    .hero-section h1 { font-size: 2rem; }
+    .hero-section p { font-size: 1rem; }
+    .btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+    .content h2 { font-size: 2rem; }
+    .gacha-card h3 { font-size: 1.5rem; }
+}
+
+/* High-Resolution Adjustments */
+@media (min-resolution: 2dppx) {
+    .header .profile-icon { border-width: 4px; }
+    .btn { font-size: 1.3rem; }
+}
