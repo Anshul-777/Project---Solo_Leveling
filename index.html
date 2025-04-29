@@ -3,76 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo Leveling Reality System - Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Solo Leveling</title>
+    <link rel="stylesheet" href="script.css">
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="quests.html">Quests</a>
-                <a href="profile.html">Profile</a>
-                <a href="rewards.html">Rewards</a>
-                <a href="settings.html">Settings</a>
-            </div>
-        </div>
+<body>
+    <!-- Opening Animation -->
+    <div class="opening-animation">
+        <div class="logo animate-zoom-in"></div>
+        <svg class="line-animation" viewBox="0 0 200 200">
+            <path d="M50 50 L150 50 L150 150 L50 150 Z" class="animate-draw-line"/>
+        </svg>
+    </div>
+
+    <!-- Aura Effects -->
+    <div class="aura aura-1 animate-aura-pulse"></div>
+    <div class="aura aura-2 animate-aura-pulse"></div>
+    <div class="aura aura-3 animate-aura-pulse"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating animate-float"></div>
+    <div class="floating animate-float"></div>
+    <div class="floating animate-float"></div>
+
+    <!-- Background Animation -->
+    <div class="background-animation animate-fade-in"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 class="title animate-fade-in">Solo Leveling</h1>
+        <div class="toggle animate-rotate">☰</div>
+        <div class="profile-icon animate-pulse"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar animate-slide-in">
+        <a href="index.html" class="microinteraction">Home</a>
+        <a href="dashboard.html" class="microinteraction">Dashboard</a>
+        <a href="quests.html" class="microinteraction">Quests</a>
+        <a href="profile.html" class="microinteraction">Profile</a>
+        <a href="rewards.html" class="microinteraction">Rewards</a>
+        <a href="settings.html" class="microinteraction">Settings</a>
     </nav>
 
     <!-- Hero Section -->
-    <main class="flex flex-col items-center justify-center h-screen pt-16">
-        <h2 class="text-5xl font-bold mb-6 animate-fade-in">Become the Main Character. Rise or Quit.</h2>
-        <p class="text-xl mb-10 animate-slide-in">This is not an app. This is your path to domination.</p>
-        <div class="flex space-x-6">
-            <button class="btn bg-blue-500 text-white hover:bg-blue-600 animate-pulse" onclick="showForm('register')">Start Your Journey</button>
-            <button class="btn bg-purple-500 text-white hover:bg-purple-600 animate-pulse" onclick="showForm('login')">Enter the Arena</button>
+    <section class="hero-section animate-gradient-shift">
+        <h1 class="animate-slide-in">Become the Main Character</h1>
+        <p class="animate-fade-in">Rise or Quit. Forge your path to domination in a world where every action counts.</p>
+        <div class="hero-buttons">
+            <button class="btn animate-pulse" onclick="showForm('register')">Start Your Journey</button>
+            <button class="btn animate-pulse" onclick="showForm('login')">Enter the Arena</button>
         </div>
+        <img src="assets/hero-character.png" alt="Solo Leveling Hero" class="hero-image hero-image-1 animate-float">
+        <img src="assets/hero-monster.png" alt="Solo Leveling Monster" class="hero-image hero-image-2 animate-float">
+        <div class="morphing animate-morph"></div>
+        <div class="animated-logo animate-rotate"></div>
+        <div class="character animate-float"></div>
+        <div class="faux-3d animate-isometric"></div>
+        <div class="liquid-motion animate-liquid"></div>
+        <svg class="line-animation hero-line" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" class="animate-draw-line"/>
+        </svg>
+    </section>
 
-        <!-- Login/Register Forms -->
-        <div id="register-form" class="hidden mt-8 bg-gray-800 p-6 rounded-lg w-96 animate-slide-in">
-            <h3 class="text-2xl font-bold mb-4">Register</h3>
+    <!-- Welcome Section -->
+    <section class="content welcome-section">
+        <h2 class="animate-slide-in">Welcome to Solo Leveling</h2>
+        <p class="animate-fade-in">This is not a game. This is a system designed to crush weakness and forge greatness. Inspired by the world of *Solo Leveling*, every task is a quest, every effort earns XP, and every failure tests your resolve.</p>
+        <div class="mixed-media animate-fade-in">
+            <img src="assets/welcome-bg.jpg" alt="Welcome Background">
+            <div class="overlay">Embark on Your Journey</div>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Your Mission</h3>
+            <p class="animate-fade-in">Level up your life through real-world challenges. From daily tasks to epic boss fights, every step brings you closer to mastery.</p>
+            <button class="btn animate-pulse">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Quest Types Section -->
+    <section class="content quest-types-section">
+        <h2 class="animate-slide-in">Quest Types</h2>
+        <p class="animate-fade-in">Choose your path with a variety of quests tailored to your growth.</p>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Daily Quests</h3>
+            <p class="animate-fade-in">Complete routine tasks like hydration, exercise, or reading to build consistency and earn steady XP.</p>
+            <button class="btn animate-pulse">View Daily Quests</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Mainline Quests</h3>
+            <p class="animate-fade-in">Tackle long-term goals like writing a book or mastering a skill for massive rewards.</p>
+            <button class="btn animate-pulse">View Mainline Quests</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Side Quests</h3>
+            <p class="animate-fade-in">Explore optional activities like learning an instrument to diversify your skills.</p>
+            <button class="btn animate-pulse">View Side Quests</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Dungeon Quests</h3>
+            <p class="animate-fade-in">Face time-bound challenges requiring intense focus for high rewards.</p>
+            <button class="btn animate-pulse">View Dungeon Quests</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Boss Quests</h3>
+            <p class="animate-fade-in">Conquer epic challenges like delivering a speech or running a marathon to prove your strength.</p>
+            <button class="btn animate-pulse">View Boss Quests</button>
+        </div>
+        <div class="doodle animate-doodle"></div>
+    </section>
+
+    <!-- Stats Overview Section -->
+    <section class="content stats-overview-section">
+        <h2 class="animate-slide-in">Your Stats</h2>
+        <p class="animate-fade-in">Track your growth across six core attributes, displayed in a hexagonal graph.</p>
+        <div class="profile-stats animate-fade-in">
+            <div class="hexagon animate-pulse">
+                <span>Strength: 0</span>
+            </div>
+            <div class="hexagon animate-pulse">
+                <span>Intelligence: 0</span>
+            </div>
+            <div class="hexagon animate-pulse">
+                <span>Discipline: 0</span>
+            </div>
+            <div class="hexagon animate-pulse">
+                <span>Focus: 0</span>
+            </div>
+            <div class="hexagon animate-pulse">
+                <span>Charisma: 0</span>
+            </div>
+            <div class="hexagon animate-pulse">
+                <span>Creativity: 0</span>
+            </div>
+        </div>
+        <div class="stats-display animate-slide-in">
+            <div class="stat-item glassmorphic">
+                <h4>Starting Level</h4>
+                <span>Lv. 1</span>
+            </div>
+            <div class="stat-item glassmorphic">
+                <h4>XP</h4>
+                <span>0/100</span>
+            </div>
+            <div class="stat-item glassmorphic">
+                <h4>Coins</h4>
+                <span>0</span>
+            </div>
+        </div>
+        <div class="flipbook animate-flipbook"></div>
+    </section>
+
+    <!-- Rewards Preview Section -->
+    <section class="content rewards-preview-section">
+        <h2 class="animate-slide-in">Rewards Await</h2>
+        <p class="animate-fade-in">Earn coins and XP to unlock avatar upgrades, gear, and more in the rewards shop.</p>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Avatar Customization</h3>
+            <p class="animate-fade-in">Personalize your character with unique gear and auras.</p>
+            <button class="btn animate-pulse">Explore Rewards</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">XP Boosts</h3>
+            <p class="animate-fade-in">Gain temporary boosts to accelerate your leveling.</p>
+            <button class="btn animate-pulse">Explore Boosts</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Epic Gear</h3>
+            <p class="animate-fade-in">Unlock legendary items to showcase your progress.</p>
+            <button class="btn animate-pulse">Explore Gear</button>
+        </div>
+        <div class="liquid-motion animate-liquid"></div>
+    </section>
+
+    <!-- Focus Mode Section -->
+    <section class="content focus-mode-section">
+        <h2 class="animate-slide-in">Enter Focus Mode</h2>
+        <p class="animate-fade-in">Lock in and tackle your quests without distractions. Activate focus mode to maximize productivity.</p>
+        <div class="gacha-card neumorphic animate-slide-in">
+            <h3 class="animate-fade-in">Distraction-Free Environment</h3>
+            <p class="animate-fade-in">Immerse yourself in a timed session to complete your tasks.</p>
+            <button class="btn animate-pulse" onclick="window.location.href='focus.html'">Start Focus Mode</button>
+        </div>
+        <div class="faux-3d animate-isometric"></div>
+    </section>
+
+    <!-- Verification System Section -->
+    <section class="content verification-section">
+        <h2 class="animate-slide-in">Prove Your Worth</h2>
+        <p class="animate-fade-in">Submit proof of your completed quests for AI-powered verification. No lies, no shortcuts.</p>
+        <div class="gacha-card claymorphic animate-slide-in">
+            <h3 class="animate-fade-in">AI Verification</h3>
+            <p class="animate-fade-in">Upload photos, text, or code for validation. Only real effort counts.</p>
+            <button class="btn animate-pulse" onclick="window.location.href='verify.html'">Learn About Verification</button>
+        </div>
+        <div class="gacha-card claymorphic animate-slide-in">
+            <h3 class="animate-fade-in">Consequences</h3>
+            <p class="animate-fade-in">Fail a quest, and face penalties. Rise or quit—there’s no middle ground.</p>
+            <button class="btn animate-pulse">Understand Consequences</button>
+        </div>
+        <svg class="line-animation verification-line" viewBox="0 0 100 100">
+            <path d="M20 80 L80 20" class="animate-draw-line"/>
+        </svg>
+    </section>
+
+    <!-- Rise or Quit Section -->
+    <section class="content rise-or-quit-section">
+        <h2 class="animate-slide-in">Rise or Quit</h2>
+        <p class="animate-fade-in">Every failure is a test. Retry and dominate, or quit and lose everything. The choice is yours.</p>
+        <div class="gacha-card glassmorphic animate-slide-in">
+            <h3 class="animate-fade-in">The Ultimate Challenge</h3>
+            <p class="animate-fade-in">Prove your resolve with every quest. Only the strong survive.</p>
+            <button class="btn animate-pulse">Embrace the Challenge</button>
+        </div>
+        <div class="doodle animate-doodle"></div>
+    </section>
+
+    <!-- Social Arena Section -->
+    <section class="content social-arena-section">
+        <h2 class="animate-slide-in">Social Arena</h2>
+        <p class="animate-fade-in">Compete with friends, climb leaderboards, and join guilds to tackle group challenges.</p>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Leaderboards</h3>
+            <p class="animate-fade-in">See where you rank among other players.</p>
+            <button class="btn animate-pulse">View Leaderboards</button>
+        </div>
+        <div class="gacha-card animate-slide-in">
+            <h3 class="animate-fade-in">Guild System</h3>
+            <p class="animate-fade-in">Team up for epic group quests and rewards.</p>
+            <button class="btn animate-pulse">Join a Guild</button>
+        </div>
+        <div class="flipbook animate-flipbook"></div>
+    </section>
+
+    <!-- Emergency System Section -->
+    <section class="content emergency-section">
+        <h2 class="animate-slide-in">Emergency System</h2>
+        <p class="animate-fade-in">Life happens. Activate emergency leaves for real-world interruptions without penalties.</p>
+        <div class="gacha-card neumorphic animate-slide-in">
+            <h3 class="animate-fade-in">Limited Leaves</h3>
+            <p class="animate-fade-in">Use up to 3 leaves every 3 days for valid reasons.</p>
+            <button class="btn animate-pulse">Learn More</button>
+        </div>
+        <div class="gacha-card neumorphic animate-slide-in">
+            <h3 class="animate-fade-in">Abuse Detection</h3>
+            <p class="animate-fade-in">The system monitors for misuse and adjusts challenges accordingly.</p>
+            <button class="btn animate-pulse">Understand Rules</button>
+        </div>
+    </section>
+
+    <!-- AI Scheduler Section -->
+    <section class="content ai-scheduler-section">
+        <h2 class="animate-slide-in">AI-Powered Scheduling</h2>
+        <p class="animate-fade-in">Let our AI craft a personalized schedule based on your goals, energy levels, and strengths.</p>
+        <div class="gacha-card claymorphic animate-slide-in">
+            <h3 class="animate-fade-in">Optimized Planning</h3>
+            <p class="animate-fade-in">Receive daily quests tailored to your peak performance hours.</p>
+            <button class="btn animate-pulse">Explore Scheduler</button>
+        </div>
+        <div class="liquid-motion animate-liquid"></div>
+    </section>
+
+    <!-- Anime Immersion Section -->
+    <section class="content anime-immersion-section">
+        <h2 class="animate-slide-in">Anime-Inspired Immersion</h2>
+        <p class="animate-fade-in">Experience *Solo Leveling* through dynamic visuals, epic soundtracks, and evolving avatars.</p>
+        <div class="gacha-card glassmorphic animate-slide-in">
+            <h3 class="animate-fade-in">Battle Effects</h3>
+            <p class="animate-fade-in">Feel the thrill of streaks with animated battle sequences.</p>
+            <button class="btn animate-pulse">Preview Effects</button>
+        </div>
+        <div class="gacha-card glassmorphic animate-slide-in">
+            <h3 class="animate-fade-in">Avatar Evolution</h3>
+            <p class="animate-fade-in">Watch your character grow with new gear and auras as you level up.</p>
+            <button class="btn animate-pulse">Customize Avatar</button>
+        </div>
+        <div class="character animate-float"></div>
+    </section>
+
+    <!-- Level Display -->
+    <section class="level-display">
+        <h2 class="animate-pulse">Level 1</h2>
+        <p class="animate-fade-in">Your journey begins. Target: Become the Best.</p>
+        <div class="progression animate-progress"></div>
+    </section>
+
+    <!-- Target Section -->
+    <section class="target-section">
+        <h2 class="animate-slide-in">Target: The Best</h2>
+        <p class="animate-fade-in">No hunters here. Embrace the *Solo Leveling* mindset and rise above all challenges.</p>
+        <div class="mixed-media animate-fade-in">
+            <img src="assets/target-bg.jpg" alt="Target Background">
+            <div class="overlay">Aim for Greatness</div>
+        </div>
+    </section>
+
+    <!-- Login/Register Forms -->
+    <section class="content auth-section">
+        <div id="register-form" class="gacha-card glassmorphic hidden animate-slide-in">
+            <h3 class="animate-fade-in">Register</h3>
             <form id="register" onsubmit="registerUser(event)">
-                <input type="text" placeholder="Username" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
-                <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
-                <input type="password" placeholder="Password" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
-                <button type="submit" class="btn bg-green-500 w-full hover:bg-green-600">Create Account</button>
+                <input type="text" placeholder="Username" class="w-full p-2 mb-4 bg-gray-700 rounded animate-fade-in" required>
+                <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded animate-fade-in" required>
+                <input type="password" placeholder="Password" class="w-full p-2 mb-4 bg-gray-700 rounded animate-fade-in" required>
+                <button type="submit" class="btn w-full animate-pulse">Create Account</button>
             </form>
         </div>
-        <div id="login-form" class="hidden mt-8 bg-gray-800 p-6 rounded-lg w-96 animate-slide-in">
-            <h3 class="text-2xl font-bold mb-4">Login</h3>
+        <div id="login-form" class="gacha-card glassmorphic hidden animate-slide-in">
+            <h3 class="animate-fade-in">Login</h3>
             <form id="login" onsubmit="loginUser(event)">
-                <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
-                <input type="password" placeholder="Password" class="w-full p-2 mb-4 bg-gray-700 rounded" required>
-                <button type="submit" class="btn bg-blue-500 w-full hover:bg-blue-600">Login</button>
+                <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded animate-fade-in" required>
+                <input type="password" placeholder="Password" class="w-full p-2 mb-4 bg-gray-700 rounded animate-fade-in" required>
+                <button type="submit" class="btn w-full animate-pulse">Login</button>
             </form>
         </div>
-    </main>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="animate-fade-in">© 2025 Solo Leveling. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" class="microinteraction animate-fade-in">Twitter</a>
+            <a href="#" class="microinteraction animate-fade-in">Discord</a>
+            <a href="#" class="microinteraction animate-fade-in">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
+        // Form Toggle
         function showForm(formType) {
             document.getElementById('register-form').classList.add('hidden');
             document.getElementById('login-form').classList.add('hidden');
             document.getElementById(`${formType}-form`).classList.remove('hidden');
         }
 
+        // Register User
         function registerUser(event) {
             event.preventDefault();
-            // Future: Send to server via fetch('/api/register')
             alert('Registration successful! (Static demo)');
             window.location.href = 'dashboard.html';
         }
 
+        // Login User
         function loginUser(event) {
             event.preventDefault();
-            // Future: Send to server via fetch('/api/login')
             alert('Login successful! (Static demo)');
             window.location.href = 'dashboard.html';
         }
+
+        // Scroll Effects
+        const scrollElements = document.querySelectorAll('.scroll-effect');
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            scrollElements.forEach(el => {
+                if (scrollPosition > el.offsetTop) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+
+        // Toggle Navigation
+        document.querySelector('.toggle').addEventListener('click', () => {
+            document.querySelector('.navbar').classList.toggle('hidden');
+        });
     </script>
 </body>
 </html>
