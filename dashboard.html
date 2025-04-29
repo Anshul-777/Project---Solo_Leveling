@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Solo Leveling Reality System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Solo Leveling Reality System</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="quests.html">Quests</a>
+                <a href="profile.html">Profile</a>
+                <a href="rewards.html">Rewards</a>
+                <a href="settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto pt-20 pb-10">
+        <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in">Your Journey</h2>
+
+        <!-- User Info -->
+        <div class="flex flex-col items-center mb-10">
+            <div class="relative">
+                <img src="https://via.placeholder.com/150" alt="User Avatar" class="w-32 h-32 rounded-full border-4 border-blue-500 animate-pulse">
+                <div class="absolute bottom-0 right-0 bg-blue-500 text-white px-2 py-1 rounded">Level 5</div>
+            </div>
+            <h3 class="text-2xl mt-4">Hunter: ShadowLord</h3>
+            <div class="w-64 h-4 bg-gray-700 rounded mt-2">
+                <div class="h-full bg-green-500 rounded" style="width: 70%; transition: width 1s ease;"></div>
+            </div>
+            <p class="mt-1">XP: 350/500</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="mb-10">
+            <h3 class="text-2xl font-bold text-center mb-4">Stats</h3>
+            <div class="hexagon-stats">
+                <div class="hexagon">STR: 10</div>
+                <div class="hexagon">INT: 8</div>
+                <div class="hexagon">AGI: 12</div>
+                <div class="hexagon">VIT: 9</div>
+            </div>
+        </div>
+
+        <!-- Active Quests -->
+        <div>
+            <h3 class="text-2xl font-bold text-center mb-4">Active Quests</h3>
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Daily Quest: Drink 2L Water</h4>
+                <p>Reward: 50 XP, 10 Coins</p>
+                <button class="btn bg-red-500 mt-2 hover:bg-red-600" onclick="window.location.href='focus.html'">Focus</button>
+                <button class="btn bg-blue-500 mt-2 ml-2 hover:bg-blue-600" onclick="window.location.href='verify.html'">Verify</button>
+            </div>
+            <div class="quest-card animate-slide-in">
+                <h4 class="text-xl font-bold">Mainline Quest: Write 1000 Words</h4>
+                <p>Reward: 200 XP, 50 Coins</p>
+                <button class="btn bg-red-500 mt-2 hover:bg-red-600" onclick="window.location.href='focus.html'">Focus</button>
+                <button class="btn bg-blue-500 mt-2 ml-2 hover:bg-blue-600" onclick="window.location.href='verify.html'">Verify</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
